@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "AutoClick Extension",
+    "version": "1.0",
+    "permissions": [
+      "activeTab", "tabs", "scripting"
+    ],
+    "host_permissions": ["https://thuviennuskin.com/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://thuviennuskin.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+
+  

@@ -1,0 +1,40 @@
+{
+    "name": "Tang thoi gian xem video",
+    "version": "0.1.0",
+    "description": "Tang thoi gian xem video",
+    "permissions": ["storage", "tabs", "scripting"],
+    "host_permissions": ["https://thuviennuskin.com/*"],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://thuviennuskin.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/add.png",
+          "assets/done.png",
+          "assets/reload.png",
+          "assets/smile.png",
+          "assets/v-icon.png",
+          "assets/sync.png"
+        ],
+        "matches": ["https://thuviennuskin.com/*"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "assets/smile.png",
+        "24": "assets/smile.png",
+        "32": "assets/smile.png"
+      },
+      "default_title": "Tang thoi gian xem video",
+      "default_popup": "popup.html"
+    },
+    "manifest_version": 3
+  }
